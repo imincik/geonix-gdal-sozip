@@ -1,0 +1,20 @@
+--- overrides.nix.orig	2023-01-13 09:09:31.734050846 +0100
++++ overrides.nix	2023-01-13 09:09:55.236851379 +0100
+@@ -65,6 +65,17 @@
+ 
+     # >>> CUSTOMIZE HERE
+ 
++    version = "3.7.0dev";
++
++    src = nixpkgs.fetchFromGitHub {
++      owner = "rouault";
++      repo = "gdal";
++      rev = "4915b0f3747f7c4cd07a8c1d535991e863ca5cc4";
++      hash = "sha256-B0+eHfJeL0u13ICGplOZqIGErwVoC+sReDkk0gQmB20=";
++    };
++
++    doInstallCheck = false;
++
+   })).override { inherit geos libgeotiff libspatialite proj; };
+ 
+   #####################################################################
